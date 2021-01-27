@@ -4,9 +4,9 @@
   "description": "Example using server-sent events",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"deno run --allow-net --no-check server.ts\" \"npx snowpack dev\"",
-    "server": "deno run --allow-net --no-check server.ts",
-    "denon": "denon run --allow-net --no-check server.ts",
+    "start": "concurrently \"deno run --allow-net --no-check src/server/server.ts\" \"npx snowpack dev\"",
+    "server": "deno run --allow-net --no-check src/server/server.ts",
+    "denon": "denon run --allow-net --no-check src/server/server.ts",
     "client": "npx snowpack dev"
   },
   "author": "",

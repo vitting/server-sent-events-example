@@ -5,10 +5,7 @@ import {
 } from "https://deno.land/x/oak/mod.ts";
 import { getNewsItems } from "./newsutil.ts";
 
-
-
 const newsItems = await getNewsItems();
-
 
 const app = new Application();
 const router = new Router();
