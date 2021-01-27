@@ -7,8 +7,7 @@ import { getNewsItems } from "./newsutil.ts";
 
 
 
-let newsItems = await getNewsItems();
-console.log(newsItems);
+const newsItems = await getNewsItems();
 
 
 const app = new Application();
