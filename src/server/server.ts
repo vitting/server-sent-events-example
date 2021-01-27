@@ -15,6 +15,7 @@ router.get("/", (ctx) => {
 });
 
 router.get("/sse", (ctx) => {
+  let count = 0;
   const headers = new Headers([["access-control-allow-origin", "*"]]);
   const target = ctx.sendEvents({ headers });
 
@@ -23,9 +24,16 @@ router.get("/sse", (ctx) => {
   });
 
   setInterval(() => {
-    const event = new ServerSentEvent("ping", { hello: "world" });
+    const newsItem = newsItems[count];
+
+    const event = new ServerSentEvent("newnews", newsItem);
     target.dispatchEvent(event);
-  }, 1000);
+
+    count++;
+    if (newsItems.length === count) {
+      count = 0;
+    }
+  }, 3000);
 });
 
 app.use(router.routes());

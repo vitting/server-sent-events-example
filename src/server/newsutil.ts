@@ -1,4 +1,5 @@
 import xml2js from "https://dev.jspm.io/xml2js";
+import { v4 } from "https://deno.land/std@0.84.0/uuid/mod.ts";
 
 type news = {
   rss: {
@@ -18,6 +19,7 @@ type news = {
 };
 
 export type newsItem = {
+  id: string;
   title: string;
   description: string;
   link: string;
@@ -45,7 +47,9 @@ export async function getNewsItems() {
             image = "";
           }
 
+          const id = v4.generate();
           newsItems.push({
+            id,
             title,
             description,
             link,
