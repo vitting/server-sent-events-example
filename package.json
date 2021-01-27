@@ -1,0 +1,17 @@
+{
+  "name": "serverevents",
+  "version": "1.0.0",
+  "description": "Example using server-sent events",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"deno run --allow-net --no-check server.ts\" \"npx snowpack dev\"",
+    "server": "deno run --allow-net --no-check server.ts",
+    "client": "npx snowpack dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "snowpack": "^3.0.11"
+  }
+}
