@@ -6,6 +6,7 @@
   "scripts": {
     "start": "concurrently \"deno run --allow-net --no-check server.ts\" \"npx snowpack dev\"",
     "server": "deno run --allow-net --no-check server.ts",
+    "denon": "denon run --allow-net --no-check server.ts",
     "client": "npx snowpack dev"
   },
   "author": "",

@@ -3,6 +3,13 @@ import {
   Router,
   ServerSentEvent,
 } from "https://deno.land/x/oak/mod.ts";
+import { getNewsItems } from "./newsutil.ts";
+
+
+
+let newsItems = await getNewsItems();
+console.log(newsItems);
+
 
 const app = new Application();
 const router = new Router();
