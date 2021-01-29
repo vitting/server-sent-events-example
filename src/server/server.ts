@@ -23,6 +23,15 @@ router.get("/sse", (ctx) => {
     console.log("CONNECTION CLOSED", evt);
   });
 
+  if (count === 0) {
+    const newsItem = newsItems[count];
+
+    const event = new ServerSentEvent("newnews", newsItem);
+    target.dispatchEvent(event);
+
+    count++;
+  }
+
   setInterval(() => {
     const newsItem = newsItems[count];
 
@@ -33,7 +42,7 @@ router.get("/sse", (ctx) => {
     if (newsItems.length === count) {
       count = 0;
     }
-  }, 3000);
+  }, 10000);
 });
 
 app.use(router.routes());

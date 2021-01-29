@@ -53,7 +53,7 @@ export async function getNewsItems() {
             title: title[0],
             description: description[0],
             link: link[0],
-            pubDate: pubDate[0],
+            pubDate: new Date(pubDate[0]),
             image,
           });
         }
