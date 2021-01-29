@@ -50,10 +50,10 @@ export async function getNewsItems() {
           const id = v4.generate();
           newsItems.push({
             id,
-            title,
-            description,
-            link,
-            pubDate,
+            title: title[0],
+            description: description[0],
+            link: link[0],
+            pubDate: pubDate[0],
             image,
           });
         }
